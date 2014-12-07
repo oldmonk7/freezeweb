@@ -1,39 +1,40 @@
 <div ng-include="'partials/navbar'"></div>
 
 <div class="jumbotron">
-  <h1>Edit Your Deal <span ng-show="currentUser">{{ currentUser.name }}</span>!</h1>
+  <h1>Edit Your Deal </h1>
   <p class="lead">
     <img src="images/yeoman.png" alt="I'm Yeoman"><br>
     Real Time!
   </p>
   <!-- <p><a class="btn btn-lg btn-success" ng-href="#">Splendid!</a></p> -->
-  <form class="form-horizontal" role="form">
+  <form class="form-horizontal" role="form" ng-submit="edit(form)" ng-model='form'>
   <div class="form-group">
     <label for="inputUUID" class="col-sm-2 control-label">UUID</label>
     <div class="col-sm-10">
-      <input type="email" class="form-control" id="inputUUID" placeholder="Enter UUID here">
+      <input type="text" class="form-control" id="inputUUID" name='uuid' ng-model='form.uuid' placeholder="Enter UUID here">
     </div>
   </div>
   <div class="form-group">
     <label for="store" class="col-sm-2 control-label">Store Name</label>
     <div class="col-sm-10">
-      <input type="name" class="form-control" id="inputStore" placeholder="Enter your store username here">
+      <input type="name" class="form-control" id="inputStore" ng-model='form.storeName' placeholder="Enter your store username here">
     </div>
   </div>
   <div class="form-group">
     <label for="inputPassword3" class="col-sm-2 control-label">Deal Text</label>
     <div class="col-sm-10">
-      <input type="textarea" class="form-control" id="inputStore" placeholder="Enter Your Deal Text">
+      <input type="textarea" class="form-control" id="inputStore" ng-model='form.deal' placeholder="Enter Your Deal Text">
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="inputPassword3" class="col-sm-2 control-label">Image URL</label>
+    <div class="col-sm-10">
+      <input type="textarea" class="form-control" id="inputStore" ng-model='form.url' placeholder="Enter your Store Image Link">
     </div>
   </div>
   <div class="row"> 
     <div class="form-group">
-      <div class="col-sm-6">
-        <button type="submit" class="btn btn-default">Create New Store</button>
-      </div>
-    </div>
-    <div class="form-group">
-      <div class="col-sm-offset-6 col-sm-6">
+      <div class="col-sm-offset-3 col-sm-6">
         <button type="submit" class="btn btn-default">Update the Deal</button>
       </div>
     </div>
